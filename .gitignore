@@ -1,0 +1,20 @@
+# Ignore compiled files and executables
+*.exe
+*.out
+*.o
+*.a
+*.so
+
+# Ignore temporary/editor files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS/Linux system files
+.DS_Store
+.idea/
+*.exe
