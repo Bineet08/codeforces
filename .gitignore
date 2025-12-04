@@ -4,7 +4,7 @@
 *.o
 *.a
 *.so
-
+.cph/
 # Ignore temporary/editor files
 *.log
 *.tmp
