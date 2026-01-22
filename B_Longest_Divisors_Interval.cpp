@@ -22,17 +22,16 @@ const int MOD = 1e9 + 7;
 #endif
 
 void solve() {
-    int n;
+    long long n;
     cin >> n;
-
-    vector<int> arr(n);
-    for (int &x : arr) cin >> x;
-
-    int ans = arr[0] - 1;
-    for(int i=1;i<n;i++){
-        ans = __gcd(ans,abs(arr[i] - i-1));
+    int ans = 1;
+    ll sq = sqrtl(n);
+    for(int i=2;i<=n;i++){
+        if(n%i==0) ans++;
+        else break;
     }
-cout<<ans<<endl;
+    cout<<ans<<endl;
+    return;
 }
 
 int main() {

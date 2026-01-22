@@ -28,11 +28,29 @@ void solve() {
     vector<int> arr(n);
     for (int &x : arr) cin >> x;
 
-    int ans = arr[0] - 1;
-    for(int i=1;i<n;i++){
-        ans = __gcd(ans,abs(arr[i] - i-1));
+    unordered_map<int,int>mp;
+    for(auto x:arr) mp[x]++;
+
+    int maxFreq= 0;
+    for(auto it:mp){
+        maxFreq = max(maxFreq,it.second);
     }
-cout<<ans<<endl;
+
+    long long curr = maxFreq;
+    long long ans = 0;
+    while(curr<n){
+        ans++;
+        if(2*curr <= n){
+            ans += curr;
+            curr *= 2;
+        }
+        else{
+            ans += n-curr;
+            break;
+        }
+    }
+    cout<<ans<<endl;
+
 }
 
 int main() {

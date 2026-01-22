@@ -25,14 +25,23 @@ void solve() {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int &x : arr) cin >> x;
-
-    int ans = arr[0] - 1;
-    for(int i=1;i<n;i++){
-        ans = __gcd(ans,abs(arr[i] - i-1));
+    string str;
+    cin>>str;
+    int ans = 0;
+    int cnt = 0;
+    char curr = str[0];
+    for(int i=0;i<n;i++){
+        if(curr == str[i]) cnt ++;
+        else{
+            ans = max(ans,cnt);
+            cnt = 1;
+            curr = str[i];
+        }
     }
-cout<<ans<<endl;
+    ans = max(ans,cnt);
+    cout<<ans+1<<endl;
+    
+
 }
 
 int main() {
